@@ -1,6 +1,8 @@
-- hosts: localhost
-  connectin: local
-  gather_facts: false
+---
+- name: setup Vprofile Basion host
+  hosts: localhost
+  connection: local
+  gather_facts: no
 
   tasks:
     - name: Import Bastion setup variable
