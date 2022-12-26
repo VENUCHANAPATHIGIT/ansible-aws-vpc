@@ -1,0 +1,68 @@
+---
+- name: setup profile stack
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  tasks:
+    - name: Import VPC setup variable
+      include_vars: vars/output_vars
+
+    - name: Import vprofile setup variable
+      include_vars: vars/vprostacksetup
+
+    - name: create vprofile ec2 key
+      ec2_key:
+        name: vprokey
+        region: "{{region}}"
+      register: vprokey_out
+
+    - name: save private key into file loginkey_vpro.pem
+      copy:
+        content: "{{vprokey_out.key.private_key}}"
+        dest: "./loginkey_vpro.pem"
+        mode: 0600
+      when: vprokey_out.changed
+
+    - name: create sg for LB
+      ec2_group:
+        name: vproELB-sg
+        description: Allow port 80 from everywhere and all ports within sg
+        region: "{{region}}"
+        vpc_id: "{{vpcid}}"
+        rules:
+          - proto: tcp
+            from_port: 80
+            to_port: 80
+            cidr_ip: 0.0.0.0/0
+      register: vproELBSG_out
+
+    - name: create sg for vprofile stack
+      ec2_group: 
+        name: vprostack-sg
+        description: Allow port 22 from everwhere and all ports within sg
+        region: "{{region}}"
+        vpc_id: "{{vpcid}}"
+        purge_rules: no
+        rules: 
+          - proto: tcp
+            from_port: 80
+            to_port: 80
+            group_id: "{{vproELBSG_out.group_id}}"
+
+          - proto: tcp
+            from_port: 22
+            to_port: 22
+            group_id: "{{BastionSGid}}"
+      register: vprostackSG_out
+
+
+    - name: Update SG with its own sg
+      ec2_group:
+        name: vprostack-sg
+        description: Allow port 22 from everywhere amd all ports within sg
+        region: "{{region}}"
+        vpc_id: "{{vpcid}}"
+        purge_rules: no
+        rules:
+          - proto: all
+            group_id: "{{vprostackSG_out.group_id}}"
