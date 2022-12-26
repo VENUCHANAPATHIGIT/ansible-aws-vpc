@@ -37,13 +37,13 @@
       register: vproELBSG_out
 
     - name: create sg for vprofile stack
-      ec2_group: 
+      ec2_group:
         name: vprostack-sg
         description: Allow port 22 from everwhere and all ports within sg
         region: "{{region}}"
         vpc_id: "{{vpcid}}"
         purge_rules: no
-        rules: 
+        rules:
           - proto: tcp
             from_port: 80
             to_port: 80
@@ -66,3 +66,111 @@
         rules:
           - proto: all
             group_id: "{{vprostackSG_out.group_id}}"
+    
+    - name: Creating Nginx instance webo1
+      ec2:
+        key_name: vprokey
+        region: "{{region}}"
+        instance_type: t2.micro
+        image: "{{nginx_ami}}"
+        wait: yes
+        wait_timeout: 300
+        instance_tags:
+          Name: "web01"
+          project: Vprofile
+          owner: DevOps
+        exact_count: 1
+        count_tag:
+          Name: "web01"
+          project: Vprofile
+          owner: DevOps
+        group_id: "{{vprostackSG_out.group_id}}"
+        vpc_subnet_id: "{{privsub1id}}"
+      register: web01_out
+    
+    - name: Creating Tomcat instance app01
+      ec2:
+        key_name: vprokey
+        region: "{{region}}"
+        instance_type: t2.micro
+        image: "{{tomcat_ami}}"
+        wait: yes
+        wait_timeout: 300
+        instance_tags:
+          Name: "app01"
+          project: Vprofile
+          owner: DevOps
+        exact_count: 1
+        count_tag:
+          Name: "app01"
+          project: Vprofile
+          owner: DevOps
+        group_id: "{{vprostackSG_out.group_id}}"
+        vpc_subnet_id: "{{privsub1id}}"
+      register: app01_out
+    
+    - name: Creating memchache instance mc01
+      ec2:
+        key_name: vprokey
+        region: "{{region}}"
+        instance_type: t2.micro
+        image: "{{memcache_ami}}"
+        wait: yes
+        wait_timeout: 300
+        instance_tags:
+          Name: "mc01"
+          project: Vprofile
+          owner: DevOps
+        exact_count: 1
+        count_tag:
+          Name: "mc01"
+          project: Vprofile
+          owner: DevOps
+        group_id: "{{vprostackSG_out.group_id}}"
+        vpc_subnet_id: "{{privsub1id}}"
+      register: mc01_out
+    
+    - name: Creating RabbbitMQ instance rmq01
+      ec2:
+        key_name: vprokey
+        region: "{{region}}"
+        instance_type: t2.micro
+        image: "{{rmq_ami}}"
+        wait: yes
+        wait_timeout: 300
+        instance_tags:
+          Name: "rmq01"
+          project: Vprofile
+          owner: DevOps
+        exact_count: 1
+        count_tag:
+          Name: "rmq01"
+          project: Vprofile
+          owner: DevOps
+        group_id: "{{vprostackSG_out.group_id}}"
+        vpc_subnet_id: "{{privsub1id}}"
+      register: rmq01_out
+    
+    - name: Creating MySQL instance db01
+      ec2:
+        key_name: vprokey
+        region: "{{region}}"
+        instance_type: t2.micro
+        image: "{{mysql_ami}}"
+        wait: yes
+        wait_timeout: 300
+        instance_tags:
+          Name: "db01"
+          project: Vprofile
+          owner: DevOps
+        exact_count: 1
+        count_tag:
+          Name: "db01"
+          project: Vprofile
+          owner: DevOps
+        group_id: "{{vprostackSG_out.group_id}}"
+        vpc_subnet_id: "{{privsub1id}}"
+      register: db01_out
+
+    - debug:
+        var: db01_out
