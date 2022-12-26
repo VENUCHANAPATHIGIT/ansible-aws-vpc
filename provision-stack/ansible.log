@@ -1,0 +1,227 @@
+2022-12-26 12:32:10,384 p=1495 u=ubuntu n=ansible | [WARNING]: Unable to parse /home/ubuntu/ansible-aws-vpc/provision-
+stack/inventory-repo as an inventory source
+
+2022-12-26 12:32:10,384 p=1495 u=ubuntu n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2022-12-26 12:32:10,392 p=1495 u=ubuntu n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that
+the implicit localhost does not match 'all'
+
+2022-12-26 12:32:10,703 p=1495 u=ubuntu n=ansible | PLAY [Generate artifact, copy artifact & sql file to the files directory] ******
+2022-12-26 12:32:10,721 p=1495 u=ubuntu n=ansible | TASK [Gathering Facts] *********************************************************
+2022-12-26 12:32:12,142 p=1495 u=ubuntu n=ansible | ok: [localhost]
+2022-12-26 12:32:12,159 p=1495 u=ubuntu n=ansible | TASK [Install JDK,Maven,GIT] ***************************************************
+2022-12-26 12:32:12,760 p=1495 u=ubuntu n=ansible | failed: [localhost] (item=git) => {"ansible_loop_var": "item", "changed": false, "item": "git", "msg": "Unsupported parameters for (apt) module: update_chache. Supported parameters include: force, allow_unauthenticated (allow-unauthenticated), lock_timeout, cache_valid_time, force_apt_get, allow_downgrade (allow-downgrade, allow-downgrades, allow_downgrades), fail_on_autoremove, dpkg_options, autoclean, update_cache_retry_max_delay, deb, state, default_release (default-release), policy_rc_d, install_recommends (install-recommends), update_cache_retries, update_cache (update-cache), autoremove, clean, only_upgrade, package (name, pkg), purge, upgrade, allow_change_held_packages."}
+2022-12-26 12:32:13,142 p=1495 u=ubuntu n=ansible | failed: [localhost] (item=openjdk-8-jdk) => {"ansible_loop_var": "item", "changed": false, "item": "openjdk-8-jdk", "msg": "Unsupported parameters for (apt) module: update_chache. Supported parameters include: upgrade, only_upgrade, deb, install_recommends (install-recommends), lock_timeout, update_cache_retries, default_release (default-release), clean, state, allow_unauthenticated (allow-unauthenticated), force, policy_rc_d, package (name, pkg), purge, autoremove, update_cache (update-cache), update_cache_retry_max_delay, dpkg_options, cache_valid_time, allow_downgrade (allow-downgrade, allow-downgrades, allow_downgrades), autoclean, fail_on_autoremove, allow_change_held_packages, force_apt_get."}
+2022-12-26 12:32:13,526 p=1495 u=ubuntu n=ansible | failed: [localhost] (item=maven) => {"ansible_loop_var": "item", "changed": false, "item": "maven", "msg": "Unsupported parameters for (apt) module: update_chache. Supported parameters include: purge, only_upgrade, allow_change_held_packages, package (name, pkg), update_cache_retries, default_release (default-release), upgrade, cache_valid_time, force, autoremove, deb, autoclean, state, install_recommends (install-recommends), dpkg_options, allow_unauthenticated (allow-unauthenticated), clean, force_apt_get, policy_rc_d, lock_timeout, update_cache_retry_max_delay, update_cache (update-cache), allow_downgrade (allow-downgrade, allow-downgrades, allow_downgrades), fail_on_autoremove."}
+2022-12-26 12:32:13,530 p=1495 u=ubuntu n=ansible | PLAY RECAP *********************************************************************
+2022-12-26 12:32:13,530 p=1495 u=ubuntu n=ansible | localhost                  : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-12-26 12:32:19,637 p=1660 u=ubuntu n=ansible | [WARNING]: Unable to parse /home/ubuntu/ansible-aws-vpc/provision-stack/inventory-repo as an inventory source
+
+2022-12-26 12:32:19,638 p=1660 u=ubuntu n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2022-12-26 12:32:19,642 p=1660 u=ubuntu n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2022-12-26 12:32:19,811 p=1660 u=ubuntu n=ansible | PLAY [Generate artifact, copy artifact & sql file to the files directory] **************************************************************************************************
+2022-12-26 12:32:19,820 p=1660 u=ubuntu n=ansible | TASK [Gathering Facts] *****************************************************************************************************************************************************
+2022-12-26 12:32:21,065 p=1660 u=ubuntu n=ansible | ok: [localhost]
+2022-12-26 12:32:21,081 p=1660 u=ubuntu n=ansible | TASK [Install JDK,Maven,GIT] ***********************************************************************************************************************************************
+2022-12-26 12:32:21,665 p=1660 u=ubuntu n=ansible | failed: [localhost] (item=git) => {"ansible_loop_var": "item", "changed": false, "item": "git", "msg": "Unsupported parameters for (apt) module: update_chache. Supported parameters include: fail_on_autoremove, autoremove, state, update_cache_retry_max_delay, autoclean, package (name, pkg), allow_change_held_packages, deb, update_cache_retries, default_release (default-release), allow_downgrade (allow-downgrade, allow-downgrades, allow_downgrades), allow_unauthenticated (allow-unauthenticated), force_apt_get, policy_rc_d, force, purge, lock_timeout, cache_valid_time, clean, update_cache (update-cache), upgrade, only_upgrade, install_recommends (install-recommends), dpkg_options."}
+2022-12-26 12:32:22,051 p=1660 u=ubuntu n=ansible | failed: [localhost] (item=openjdk-8-jdk) => {"ansible_loop_var": "item", "changed": false, "item": "openjdk-8-jdk", "msg": "Unsupported parameters for (apt) module: update_chache. Supported parameters include: force_apt_get, upgrade, policy_rc_d, only_upgrade, package (name, pkg), state, lock_timeout, allow_downgrade (allow-downgrade, allow-downgrades, allow_downgrades), fail_on_autoremove, install_recommends (install-recommends), autoremove, default_release (default-release), update_cache_retry_max_delay, clean, allow_change_held_packages, update_cache (update-cache), cache_valid_time, deb, force, autoclean, purge, allow_unauthenticated (allow-unauthenticated), dpkg_options, update_cache_retries."}
+2022-12-26 12:32:22,435 p=1660 u=ubuntu n=ansible | failed: [localhost] (item=maven) => {"ansible_loop_var": "item", "changed": false, "item": "maven", "msg": "Unsupported parameters for (apt) module: update_chache. Supported parameters include: default_release (default-release), dpkg_options, autoremove, deb, purge, clean, install_recommends (install-recommends), only_upgrade, force, policy_rc_d, lock_timeout, autoclean, force_apt_get, package (name, pkg), update_cache_retry_max_delay, update_cache_retries, fail_on_autoremove, update_cache (update-cache), allow_change_held_packages, allow_downgrade (allow-downgrade, allow-downgrades, allow_downgrades), upgrade, state, allow_unauthenticated (allow-unauthenticated), cache_valid_time."}
+2022-12-26 12:32:22,439 p=1660 u=ubuntu n=ansible | PLAY RECAP *****************************************************************************************************************************************************************
+2022-12-26 12:32:22,440 p=1660 u=ubuntu n=ansible | localhost                  : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-12-26 12:35:05,624 p=1840 u=ubuntu n=ansible | [WARNING]: Unable to parse /home/ubuntu/ansible-aws-vpc/provision-
+stack/inventory-repo as an inventory source
+
+2022-12-26 12:35:05,624 p=1840 u=ubuntu n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2022-12-26 12:35:05,628 p=1840 u=ubuntu n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that
+the implicit localhost does not match 'all'
+
+2022-12-26 12:35:05,793 p=1840 u=ubuntu n=ansible | PLAY [Generate artifact, copy artifact & sql file to the files directory] ******
+2022-12-26 12:35:05,802 p=1840 u=ubuntu n=ansible | TASK [Gathering Facts] *********************************************************
+2022-12-26 12:35:07,047 p=1840 u=ubuntu n=ansible | ok: [localhost]
+2022-12-26 12:35:07,063 p=1840 u=ubuntu n=ansible | TASK [Install JDK,Maven,GIT] ***************************************************
+2022-12-26 12:35:07,650 p=1840 u=ubuntu n=ansible | failed: [localhost] (item=git) => {"ansible_loop_var": "item", "changed": false, "item": "git", "msg": "Unsupported parameters for (apt) module: update_chache. Supported parameters include: autoclean, lock_timeout, upgrade, allow_unauthenticated (allow-unauthenticated), policy_rc_d, deb, force, update_cache (update-cache), install_recommends (install-recommends), state, clean, purge, cache_valid_time, autoremove, allow_downgrade (allow-downgrade, allow-downgrades, allow_downgrades), default_release (default-release), update_cache_retries, only_upgrade, force_apt_get, package (name, pkg), allow_change_held_packages, update_cache_retry_max_delay, fail_on_autoremove, dpkg_options."}
+2022-12-26 12:35:08,035 p=1840 u=ubuntu n=ansible | failed: [localhost] (item=openjdk-8-jdk) => {"ansible_loop_var": "item", "changed": false, "item": "openjdk-8-jdk", "msg": "Unsupported parameters for (apt) module: update_chache. Supported parameters include: fail_on_autoremove, policy_rc_d, autoclean, deb, dpkg_options, state, lock_timeout, update_cache (update-cache), update_cache_retry_max_delay, force_apt_get, force, only_upgrade, autoremove, install_recommends (install-recommends), allow_downgrade (allow-downgrade, allow-downgrades, allow_downgrades), update_cache_retries, allow_change_held_packages, allow_unauthenticated (allow-unauthenticated), purge, upgrade, clean, cache_valid_time, package (name, pkg), default_release (default-release)."}
+2022-12-26 12:35:08,416 p=1840 u=ubuntu n=ansible | failed: [localhost] (item=maven) => {"ansible_loop_var": "item", "changed": false, "item": "maven", "msg": "Unsupported parameters for (apt) module: update_chache. Supported parameters include: update_cache (update-cache), package (name, pkg), update_cache_retries, deb, force, fail_on_autoremove, allow_change_held_packages, force_apt_get, state, install_recommends (install-recommends), lock_timeout, cache_valid_time, clean, default_release (default-release), allow_downgrade (allow-downgrade, allow-downgrades, allow_downgrades), dpkg_options, allow_unauthenticated (allow-unauthenticated), policy_rc_d, purge, autoremove, only_upgrade, upgrade, autoclean, update_cache_retry_max_delay."}
+2022-12-26 12:35:08,421 p=1840 u=ubuntu n=ansible | PLAY RECAP *********************************************************************
+2022-12-26 12:35:08,421 p=1840 u=ubuntu n=ansible | localhost                  : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-12-26 12:35:14,814 p=2005 u=ubuntu n=ansible | [WARNING]: Unable to parse /home/ubuntu/ansible-aws-vpc/provision-stack/inventory-repo as an inventory source
+
+2022-12-26 12:35:14,814 p=2005 u=ubuntu n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2022-12-26 12:35:14,818 p=2005 u=ubuntu n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2022-12-26 12:35:14,986 p=2005 u=ubuntu n=ansible | PLAY [Generate artifact, copy artifact & sql file to the files directory] **************************************************************************************************
+2022-12-26 12:35:14,995 p=2005 u=ubuntu n=ansible | TASK [Gathering Facts] *****************************************************************************************************************************************************
+2022-12-26 12:35:16,259 p=2005 u=ubuntu n=ansible | ok: [localhost]
+2022-12-26 12:35:16,275 p=2005 u=ubuntu n=ansible | TASK [Install JDK,Maven,GIT] ***********************************************************************************************************************************************
+2022-12-26 12:35:16,882 p=2005 u=ubuntu n=ansible | failed: [localhost] (item=git) => {"ansible_loop_var": "item", "changed": false, "item": "git", "msg": "Unsupported parameters for (apt) module: update_chache. Supported parameters include: update_cache_retries, deb, package (name, pkg), state, force, upgrade, default_release (default-release), policy_rc_d, purge, fail_on_autoremove, install_recommends (install-recommends), lock_timeout, only_upgrade, allow_change_held_packages, clean, allow_unauthenticated (allow-unauthenticated), allow_downgrade (allow-downgrade, allow-downgrades, allow_downgrades), force_apt_get, autoclean, autoremove, update_cache_retry_max_delay, update_cache (update-cache), cache_valid_time, dpkg_options."}
+2022-12-26 12:35:17,283 p=2005 u=ubuntu n=ansible | failed: [localhost] (item=openjdk-8-jdk) => {"ansible_loop_var": "item", "changed": false, "item": "openjdk-8-jdk", "msg": "Unsupported parameters for (apt) module: update_chache. Supported parameters include: lock_timeout, update_cache_retry_max_delay, allow_unauthenticated (allow-unauthenticated), allow_change_held_packages, autoremove, policy_rc_d, force_apt_get, deb, dpkg_options, allow_downgrade (allow-downgrade, allow-downgrades, allow_downgrades), purge, update_cache_retries, autoclean, cache_valid_time, only_upgrade, default_release (default-release), clean, install_recommends (install-recommends), package (name, pkg), force, upgrade, fail_on_autoremove, state, update_cache (update-cache)."}
+2022-12-26 12:35:17,677 p=2005 u=ubuntu n=ansible | failed: [localhost] (item=maven) => {"ansible_loop_var": "item", "changed": false, "item": "maven", "msg": "Unsupported parameters for (apt) module: update_chache. Supported parameters include: state, fail_on_autoremove, force_apt_get, package (name, pkg), update_cache_retries, lock_timeout, autoremove, update_cache_retry_max_delay, upgrade, only_upgrade, install_recommends (install-recommends), allow_unauthenticated (allow-unauthenticated), cache_valid_time, dpkg_options, purge, allow_change_held_packages, policy_rc_d, deb, force, allow_downgrade (allow-downgrade, allow-downgrades, allow_downgrades), default_release (default-release), autoclean, update_cache (update-cache), clean."}
+2022-12-26 12:35:17,682 p=2005 u=ubuntu n=ansible | PLAY RECAP *****************************************************************************************************************************************************************
+2022-12-26 12:35:17,682 p=2005 u=ubuntu n=ansible | localhost                  : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-12-26 12:35:47,142 p=2171 u=ubuntu n=ansible | [WARNING]: Unable to parse /home/ubuntu/ansible-aws-vpc/provision-stack/inventory-repo as an inventory source
+
+2022-12-26 12:35:47,143 p=2171 u=ubuntu n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2022-12-26 12:35:47,146 p=2171 u=ubuntu n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2022-12-26 12:35:47,314 p=2171 u=ubuntu n=ansible | PLAY [Generate artifact, copy artifact & sql file to the files directory] **************************************************************************************************
+2022-12-26 12:35:47,323 p=2171 u=ubuntu n=ansible | TASK [Gathering Facts] *****************************************************************************************************************************************************
+2022-12-26 12:35:48,562 p=2171 u=ubuntu n=ansible | ok: [localhost]
+2022-12-26 12:35:48,578 p=2171 u=ubuntu n=ansible | TASK [Install JDK,Maven,GIT] ***********************************************************************************************************************************************
+2022-12-26 12:35:53,844 p=2171 u=ubuntu n=ansible | ok: [localhost] => (item=git)
+2022-12-26 12:36:31,778 p=2171 u=ubuntu n=ansible | changed: [localhost] => (item=openjdk-8-jdk)
+2022-12-26 12:36:40,605 p=2171 u=ubuntu n=ansible | changed: [localhost] => (item=maven)
+2022-12-26 12:36:40,620 p=2171 u=ubuntu n=ansible | TASK [clone sourcecode from github] ****************************************************************************************************************************************
+2022-12-26 12:36:44,806 p=2171 u=ubuntu n=ansible | changed: [localhost]
+2022-12-26 12:36:44,818 p=2171 u=ubuntu n=ansible | TASK [mvn install command to build artifact] *******************************************************************************************************************************
+2022-12-26 12:37:23,398 p=2171 u=ubuntu n=ansible | changed: [localhost]
+2022-12-26 12:37:23,419 p=2171 u=ubuntu n=ansible | TASK [copy artifacts to files directory] ***********************************************************************************************************************************
+2022-12-26 12:37:24,691 p=2171 u=ubuntu n=ansible | changed: [localhost] => (item=/home/ubuntu/ansible-aws-vpc/provision-stack/Vprofile-repo/target/vprofile-v2.war)
+2022-12-26 12:37:24,703 p=2171 u=ubuntu n=ansible | TASK [Copy SQL file to files directory] ************************************************************************************************************************************
+2022-12-26 12:37:25,158 p=2171 u=ubuntu n=ansible | changed: [localhost]
+2022-12-26 12:37:25,175 p=2171 u=ubuntu n=ansible | PLAY RECAP *****************************************************************************************************************************************************************
+2022-12-26 12:37:25,175 p=2171 u=ubuntu n=ansible | localhost                  : ok=6    changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-12-26 12:50:43,349 p=7069 u=ubuntu n=ansible | [WARNING]: Unable to parse /home/ubuntu/ansible-aws-vpc/provision-
+stack/inventory-repo as an inventory source
+
+2022-12-26 12:50:43,349 p=7069 u=ubuntu n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2022-12-26 12:50:43,357 p=7069 u=ubuntu n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that
+the implicit localhost does not match 'all'
+
+2022-12-26 12:50:43,761 p=7069 u=ubuntu n=ansible | PLAY [set host to ip mapping in /etc/hosts file of all the instances in the stack] ***
+2022-12-26 12:50:43,761 p=7069 u=ubuntu n=ansible | skipping: no hosts matched
+2022-12-26 12:50:43,761 p=7069 u=ubuntu n=ansible | PLAY RECAP *********************************************************************
+2022-12-26 12:50:52,549 p=7074 u=ubuntu n=ansible | [WARNING]: Unable to parse /home/ubuntu/ansible-aws-vpc/provision-stack/inventory-repo as an inventory source
+
+2022-12-26 12:50:52,550 p=7074 u=ubuntu n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2022-12-26 12:50:52,553 p=7074 u=ubuntu n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2022-12-26 12:50:52,715 p=7074 u=ubuntu n=ansible | PLAY [set host to ip mapping in /etc/hosts file of all the instances in the stack] *****************************************************************************************
+2022-12-26 12:50:52,715 p=7074 u=ubuntu n=ansible | skipping: no hosts matched
+2022-12-26 12:50:52,715 p=7074 u=ubuntu n=ansible | PLAY RECAP *****************************************************************************************************************************************************************
+2022-12-26 12:52:51,867 p=7084 u=ubuntu n=ansible | [WARNING]: Unable to parse /home/ubuntu/ansible-aws-vpc/provision-
+stack/inventory-repo as an inventory source
+
+2022-12-26 12:52:51,868 p=7084 u=ubuntu n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2022-12-26 12:52:51,872 p=7084 u=ubuntu n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that
+the implicit localhost does not match 'all'
+
+2022-12-26 12:52:52,033 p=7084 u=ubuntu n=ansible | PLAY [set host to ip mapping in /etc/hosts file of all the instances in the stack] ***
+2022-12-26 12:52:52,033 p=7084 u=ubuntu n=ansible | skipping: no hosts matched
+2022-12-26 12:52:52,033 p=7084 u=ubuntu n=ansible | PLAY RECAP *********************************************************************
+2022-12-26 12:53:43,796 p=7090 u=ubuntu n=ansible | [WARNING]: Unable to parse /home/ubuntu/ansible-aws-vpc/provision-
+stack/inventory-repo as an inventory source
+
+2022-12-26 12:53:43,796 p=7090 u=ubuntu n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2022-12-26 12:53:43,800 p=7090 u=ubuntu n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that
+the implicit localhost does not match 'all'
+
+2022-12-26 12:53:43,964 p=7090 u=ubuntu n=ansible | PLAY [set host to ip mapping in /etc/hosts file of all the instances in the stack] ***
+2022-12-26 12:53:43,964 p=7090 u=ubuntu n=ansible | skipping: no hosts matched
+2022-12-26 12:53:43,964 p=7090 u=ubuntu n=ansible | PLAY RECAP *********************************************************************
+2022-12-26 12:59:52,011 p=7511 u=ubuntu n=ansible | [WARNING]: Unable to parse /home/ubuntu/ansible-aws-vpc/provision-stack/inventory-repo as an inventory source
+
+2022-12-26 12:59:52,014 p=7511 u=ubuntu n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2022-12-26 12:59:52,017 p=7511 u=ubuntu n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2022-12-26 12:59:52,182 p=7511 u=ubuntu n=ansible | PLAY [set host to ip mapping in /etc/hosts file of all the instances in the stack] *****************************************************************************************
+2022-12-26 12:59:52,182 p=7511 u=ubuntu n=ansible | skipping: no hosts matched
+2022-12-26 12:59:52,183 p=7511 u=ubuntu n=ansible | PLAY RECAP *****************************************************************************************************************************************************************
+2022-12-26 13:03:00,131 p=7527 u=ubuntu n=ansible | [WARNING]: Unable to parse /home/ubuntu/ansible-aws-vpc/provision-stack/inventory-repo as an inventory source
+
+2022-12-26 13:03:00,131 p=7527 u=ubuntu n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2022-12-26 13:03:00,135 p=7527 u=ubuntu n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2022-12-26 13:03:00,299 p=7527 u=ubuntu n=ansible | PLAY [set host to ip mapping in /etc/hosts file of all the instances in the stack] *****************************************************************************************
+2022-12-26 13:03:00,300 p=7527 u=ubuntu n=ansible | skipping: no hosts matched
+2022-12-26 13:03:00,300 p=7527 u=ubuntu n=ansible | PLAY RECAP *****************************************************************************************************************************************************************
+2022-12-26 13:06:30,161 p=7542 u=ubuntu n=ansible | [WARNING]: Unable to parse /home/ubuntu/ansible-aws-vpc/provision-
+stack/inventory-repo as an inventory source
+
+2022-12-26 13:06:30,162 p=7542 u=ubuntu n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2022-12-26 13:06:30,165 p=7542 u=ubuntu n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that
+the implicit localhost does not match 'all'
+
+2022-12-26 13:06:30,328 p=7542 u=ubuntu n=ansible | PLAY [set host to ip mapping in /etc/hosts file of all the instances in the stack] ***
+2022-12-26 13:06:30,329 p=7542 u=ubuntu n=ansible | skipping: no hosts matched
+2022-12-26 13:06:30,329 p=7542 u=ubuntu n=ansible | PLAY RECAP *********************************************************************
+2022-12-26 13:07:36,641 p=7549 u=ubuntu n=ansible | [WARNING]: Unable to parse /home/ubuntu/ansible-aws-vpc/provision-
+stack/inventory-repo as an inventory source
+
+2022-12-26 13:07:36,641 p=7549 u=ubuntu n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2022-12-26 13:07:36,645 p=7549 u=ubuntu n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that
+the implicit localhost does not match 'all'
+
+2022-12-26 13:07:36,806 p=7549 u=ubuntu n=ansible | PLAY [set host to ip mapping in /etc/hosts file of all the instances in the stack] ***
+2022-12-26 13:07:36,806 p=7549 u=ubuntu n=ansible | skipping: no hosts matched
+2022-12-26 13:07:36,806 p=7549 u=ubuntu n=ansible | PLAY RECAP *********************************************************************
+2022-12-26 13:10:24,586 p=7578 u=ubuntu n=ansible | [WARNING]: Unable to parse /home/ubuntu/ansible-aws-vpc/provision-
+stack/inventory-repo as an inventory source
+
+2022-12-26 13:10:24,587 p=7578 u=ubuntu n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2022-12-26 13:10:24,591 p=7578 u=ubuntu n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that
+the implicit localhost does not match 'all'
+
+2022-12-26 13:10:24,756 p=7578 u=ubuntu n=ansible | PLAY [set host to ip mapping in /etc/hosts file of all the instances in the stack] ***
+2022-12-26 13:10:24,756 p=7578 u=ubuntu n=ansible | skipping: no hosts matched
+2022-12-26 13:10:24,756 p=7578 u=ubuntu n=ansible | PLAY RECAP *********************************************************************
+2022-12-26 13:10:31,450 p=7583 u=ubuntu n=ansible | [WARNING]: Unable to parse /home/ubuntu/ansible-aws-vpc/provision-
+stack/inventory-repo as an inventory source
+
+2022-12-26 13:10:31,450 p=7583 u=ubuntu n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2022-12-26 13:10:31,454 p=7583 u=ubuntu n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that
+the implicit localhost does not match 'all'
+
+2022-12-26 13:10:31,617 p=7583 u=ubuntu n=ansible | PLAY [set host to ip mapping in /etc/hosts file of all the instances in the stack] ***
+2022-12-26 13:10:31,618 p=7583 u=ubuntu n=ansible | skipping: no hosts matched
+2022-12-26 13:10:31,618 p=7583 u=ubuntu n=ansible | PLAY RECAP *********************************************************************
+2022-12-26 13:11:43,212 p=7614 u=ubuntu n=ansible | [WARNING]: Unable to parse /home/ubuntu/ansible-aws-vpc/provision-stack/inventory-repo as an inventory source
+
+2022-12-26 13:11:43,213 p=7614 u=ubuntu n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2022-12-26 13:11:43,216 p=7614 u=ubuntu n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2022-12-26 13:11:43,379 p=7614 u=ubuntu n=ansible | PLAY [set host to ip mapping in /etc/hosts file of all the instances in the stack] *****************************************************************************************
+2022-12-26 13:11:43,379 p=7614 u=ubuntu n=ansible | skipping: no hosts matched
+2022-12-26 13:11:43,379 p=7614 u=ubuntu n=ansible | PLAY RECAP *****************************************************************************************************************************************************************
+2022-12-26 13:11:47,512 p=7619 u=ubuntu n=ansible | [WARNING]: Unable to parse /home/ubuntu/ansible-aws-vpc/provision-stack/inventory-repo as an inventory source
+
+2022-12-26 13:11:47,512 p=7619 u=ubuntu n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2022-12-26 13:11:47,516 p=7619 u=ubuntu n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2022-12-26 13:11:47,677 p=7619 u=ubuntu n=ansible | PLAY [set host to ip mapping in /etc/hosts file of all the instances in the stack] *****************************************************************************************
+2022-12-26 13:11:47,677 p=7619 u=ubuntu n=ansible | skipping: no hosts matched
+2022-12-26 13:11:47,677 p=7619 u=ubuntu n=ansible | PLAY RECAP *****************************************************************************************************************************************************************
+2022-12-26 13:13:03,360 p=7637 u=ubuntu n=ansible | [WARNING]: Unable to parse /home/ubuntu/ansible-aws-vpc/provision-stack/inventory-repo as an inventory source
+
+2022-12-26 13:13:03,360 p=7637 u=ubuntu n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2022-12-26 13:13:03,364 p=7637 u=ubuntu n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2022-12-26 13:13:03,527 p=7637 u=ubuntu n=ansible | PLAY [set host to ip mapping in /etc/hosts file of all the instances in the stack] *****************************************************************************************
+2022-12-26 13:13:03,527 p=7637 u=ubuntu n=ansible | skipping: no hosts matched
+2022-12-26 13:13:03,527 p=7637 u=ubuntu n=ansible | PLAY RECAP *****************************************************************************************************************************************************************
+2022-12-26 13:13:47,799 p=7651 u=ubuntu n=ansible | [WARNING]: Unable to parse /home/ubuntu/ansible-aws-vpc/provision-stack/inventory-repo as an inventory source
+
+2022-12-26 13:13:47,799 p=7651 u=ubuntu n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2022-12-26 13:13:47,803 p=7651 u=ubuntu n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2022-12-26 13:13:47,966 p=7651 u=ubuntu n=ansible | PLAY [set host to ip mapping in /etc/hosts file of all the instances in the stack] *****************************************************************************************
+2022-12-26 13:13:47,967 p=7651 u=ubuntu n=ansible | skipping: no hosts matched
+2022-12-26 13:13:47,967 p=7651 u=ubuntu n=ansible | PLAY RECAP *****************************************************************************************************************************************************************

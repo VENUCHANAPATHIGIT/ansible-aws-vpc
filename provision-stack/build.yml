@@ -7,7 +7,7 @@
       apt:
         name: "{{item}}"
         state: present
-        update_chache: yes
+        update_cache: yes
 
       loop:
         - git
@@ -19,13 +19,13 @@
         repo: 'https://github.com/VENUCHANAPATHIGIT/vprofile-project.git'
         dest: ./Vprofile-repo
         version: vp-rem
-      register: git-status
+      register: git_status
 
     - name: mvn install command to build artifact
       command: "mvn install"
       args:
         chdir: Vprofile-repo
-      when: git-status.changed
+      when: git_status.changed
       register: mvn_info
 
     - name: copy artifacts to files directory
