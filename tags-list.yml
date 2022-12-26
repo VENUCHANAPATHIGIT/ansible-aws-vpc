@@ -6,7 +6,7 @@
     - name: import vars
       include_vars: vars/vpc_setup
 
-    - name: Retrieve all tags on an instance
+    - name: Retrieve all tags
       ec2_tag_info:
         region: "{{region}}"
         resource: i-06f7d930d51b4fc6a
