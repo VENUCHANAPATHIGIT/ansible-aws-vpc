@@ -39,7 +39,7 @@
     - name: create sg for vprofile stack
       ec2_group: 
         name: vprostack-sg
-        descripton: Allow port 22 from everwhere and all ports within sg
+        description: Allow port 22 from everwhere and all ports within sg
         region: "{{region}}"
         vpc_id: "{{vpcid}}"
         purge_rules: no
@@ -56,13 +56,13 @@
       register: vprostackSG_out
 
 
-   - name: Update SG with its own sg
-     ec2_group:
-       name: vprostack-sg
-       description: Allow port 22 from everywhere amd all ports within sg
-       region: "{{region}}"
-       vpc_id: "{{vpcid}}"
-       purge_rules: no
-       rules:
-         - proto: tcp
-           group_id: "{{vprostackSG_out.group_id}}"
+    - name: Update SG with its own sg
+      ec2_group:
+        name: vprostack-sg
+        description: Allow port 22 from everywhere amd all ports within sg
+        region: "{{region}}"
+        vpc_id: "{{vpcid}}"
+        purge_rules: no
+        rules:
+          - proto: all
+            group_id: "{{vprostackSG_out.group_id}}"
