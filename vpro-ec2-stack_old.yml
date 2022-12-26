@@ -66,7 +66,7 @@
         rules:
           - proto: all
             group_id: "{{vprostackSG_out.group_id}}"
-    
+
     - name: Creating Nginx instance webo1
       ec2:
         key_name: vprokey
@@ -87,7 +87,7 @@
         group_id: "{{vprostackSG_out.group_id}}"
         vpc_subnet_id: "{{privsub1id}}"
       register: web01_out
-    
+
     - name: Creating Tomcat instance app01
       ec2:
         key_name: vprokey
@@ -108,7 +108,7 @@
         group_id: "{{vprostackSG_out.group_id}}"
         vpc_subnet_id: "{{privsub1id}}"
       register: app01_out
-    
+
     - name: Creating memchache instance mc01
       ec2:
         key_name: vprokey
@@ -129,7 +129,7 @@
         group_id: "{{vprostackSG_out.group_id}}"
         vpc_subnet_id: "{{privsub1id}}"
       register: mc01_out
-    
+
     - name: Creating RabbbitMQ instance rmq01
       ec2:
         key_name: vprokey
@@ -150,7 +150,7 @@
         group_id: "{{vprostackSG_out.group_id}}"
         vpc_subnet_id: "{{privsub1id}}"
       register: rmq01_out
-    
+
     - name: Creating MySQL instance db01
       ec2:
         key_name: vprokey
@@ -173,4 +173,22 @@
       register: db01_out
 
     - debug:
-        var: db01_out
+        var: db01_out.tagged_instances[0].id
+
+    - local-action:
+        module: ec2-elb-lb
+        name: "vprofile-elb"
+        region: "{{region}}"
+        state: present
+        instance_ids:
+          - "{{web01_out.tagged_instances[0].id}}"
+        purge_instance_ids: true
+        security_groups_ids: "{{vproELBSG_out.group_id}}"
+        subnets:
+          - "{{pubsub1id}}"
+          - "{{pubsub2id}}"
+          - "{{pubsub3id}}"
+        Listeners:
+          - protocol: http
+            load_balancer_port: 80
+            instance_port: 80
